@@ -183,7 +183,7 @@ function PrivacyPolicy() {
                                 </p>
                                 <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
                                     <p className="text-gray-700 dark:text-gray-300">
-                                        <strong>Email:</strong> privacy@coderschain.com<br />
+                                        <strong>Email:</strong> support@coderschain.com<br />
                                         <strong>Website:</strong> www.coderschain.com<br />
                                         <strong>Address:</strong> Rajasthan, India
                                     </p>

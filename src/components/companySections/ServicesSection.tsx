@@ -1,156 +1,186 @@
 "use client"
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { motion } from "framer-motion"
+import {
+    Layout,
+    Smartphone,
+    Cpu,
+    Rocket,
+    Palette,
+    Glasses,
+    ArrowRight,
+    Check
+} from "lucide-react"
+import Link from "next/link"
 
 const services = [
     {
         id: 1,
-        icon: "🌐",
-        category: "Web Development",
-        title: "Web App Development",
-        description: "A decade of excellence in custom web application development, transforming visionary ideas into powerful digital solutions with cutting-edge technologies and scalable architectures.",
-        features: ["Custom Solutions", "Scalable Architecture", "10+ Years Experience"]
+        icon: Layout,
+        category: "Web Engineering",
+        title: "Modern Web & PWA",
+        description: "Building high-performance Progressive Web Apps (PWA) and enterprise-grade web platforms. We focus on speed, SEO, and offline-first capabilities to ensure your presence is felt everywhere.",
+        features: ["Next.js & React", "PWA Optimization", "Headless CMS"],
+        color: "from-blue-500/20 to-cyan-500/20",
+        accent: "text-blue-500"
     },
     {
         id: 2,
-        icon: "🤖",
-        category: "Artificial Intelligence",
-        title: "AI App Development",
-        description: "Pioneering AI-powered mobile applications that leverage machine learning and advanced algorithms to deliver intelligent, adaptive user experiences and business automation.",
-        features: ["Machine Learning", "AI Integration", "Smart Automation"]
+        icon: Smartphone,
+        category: "Mobile Solutions",
+        title: "React Native & Cross-Platform",
+        description: "Expert mobile app development using React Native. We deliver near-native performance for iOS and Android with a single codebase, accelerating your time to market without compromising quality.",
+        features: ["React Native", "Native Modules", "App Store Success"],
+        color: "from-purple-500/20 to-pink-500/20",
+        accent: "text-purple-500"
     },
     {
         id: 3,
-        icon: "🚀",
-        category: "Startup Solutions",
-        title: "MVP Development Services",
-        description: "Accelerate your market entry with our specialized MVP development, transforming concepts into functional prototypes that validate your business model and attract early adopters.",
-        features: ["Rapid Prototyping", "Market Validation", "Cost-Effective"]
+        icon: Cpu,
+        category: "Artificial Intelligence",
+        title: "AI & Smart Automation",
+        description: "Integrating advanced LLMs and custom machine learning models into your business workflow. From intelligent chatbots to complex data analysis, we bring the power of AI to your fingertips.",
+        features: ["LLM Integration", "Predictive Analytics", "Workflow Automation"],
+        color: "from-pink-500/20 to-rose-500/20",
+        accent: "text-pink-500"
     },
     {
         id: 4,
-        icon: "📱",
-        category: "Mobile Excellence",
-        title: "Mobile App Development",
-        description: "Comprehensive mobile application development with a decade of expertise, delivering cross-platform solutions using the latest frameworks and industry-best practices.",
-        features: ["Cross-Platform", "Native Development", "Latest Technologies"]
+        icon: Rocket,
+        category: "Fast-Track",
+        title: "Strategic MVP Development",
+        description: "Transforming your core vision into a market-ready product in record time. We specialize in rapid prototyping and lean development to help startups validate ideas and scale quickly.",
+        features: ["Rapid Prototyping", "Scalable MVP", "Market Validation"],
+        color: "from-orange-500/20 to-amber-500/20",
+        accent: "text-orange-500"
     },
     {
         id: 5,
-        icon: "🎨",
+        icon: Palette,
         category: "Design Innovation",
-        title: "UI/UX Design Services",
-        description: "Transform user experiences with our award-winning UI/UX design team, creating intuitive interfaces and engaging digital journeys that drive conversion and user satisfaction.",
-        features: ["User-Centered Design", "Interactive Prototypes", "Brand Alignment"]
+        title: "Product UI/UX Design",
+        description: "Creating emotive and intuitive digital journeys. Our design-first approach ensures that your product is not just functional, but a joy to use, driving user retention and brand loyalty.",
+        features: ["User Research", "Interactive Prototypes", "Visual Identity"],
+        color: "from-emerald-500/20 to-teal-500/20",
+        accent: "text-emerald-500"
     },
     {
         id: 6,
-        icon: "👓",
-        category: "Immersive Tech",
-        title: "AR/VR Development",
-        description: "Create captivating augmented and virtual reality experiences that push boundaries, from interactive training simulations to immersive brand engagements and gaming applications.",
-        features: ["Immersive Experiences", "3D Modeling", "Interactive Solutions"]
+        icon: Glasses,
+        category: "Next-Gen",
+        title: "AR/VR & Immersive Tech",
+        description: "Designing the future with spatial computing and immersive experiences. We build AR and VR solutions that bridge the gap between digital and physical worlds for training and marketing.",
+        features: ["VisionOS & Unity", "Immersive UX", "Spatial Computing"],
+        color: "from-indigo-500/20 to-violet-500/20",
+        accent: "text-indigo-500"
     }
 ]
 
 export default function ServicesSection() {
     return (
-        <section className="w-full bg-background container-web">
-            <div className="container px-4 md:px-6 mx-auto">
+        <section className="bg-[#f7f4ed]/60 dark:bg-background overflow-hidden border-b border-gray-100 dark:border-white/5">
+            <div className="container-web mx-auto px-4 md:px-6">
                 {/* Header Section */}
-                <div className="text-center space-y-4 mb-12 md:mb-16">
-                    <Badge variant="secondary" className="px-4 py-1 text-sm font-semibold">
-                        Our Services
-                    </Badge>
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                        Transformative Digital
-                        <span className="block text-primary mt-2">Solutions</span>
-                    </h2>
-                    <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                        Empowering businesses with cutting-edge technology solutions, from concept to deployment,
-                        delivering exceptional digital experiences that drive growth and innovation.
-                    </p>
+                <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        className="px-4 py-1.5 rounded-full bg-linear-to-r from-[#fe78b8]/10 to-[#ce3ef4]/10 border border-[#fe78b8]/20 text-[#ce3ef4] text-sm font-bold tracking-widest uppercase mb-6"
+                    >
+                        Our Expertise
+                    </motion.div>
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight leading-[1.1]"
+                    >
+                        Solutions Built for <span className="bg-gradient-to-r from-[#fe78b8] to-[#ce3ef4] bg-clip-text text-transparent">Modern Business</span>
+                    </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed"
+                    >
+                        We leverage cutting-edge technologies to solve complex challenges and create digital products that define industries.
+                    </motion.p>
                 </div>
 
                 {/* Services Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    {services.map((service) => (
-                        <ServiceCard key={service.id} service={service} />
+                    {services.map((service, index) => (
+                        <ServiceCard key={service.id} service={service} index={index} />
                     ))}
                 </div>
 
-                {/* CTA Section */}
-                <div className="text-center mt-16 md:mt-20">
-                    <div className="bg-muted/50 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                            Ready to Transform Your Digital Presence?
-                        </h3>
-                        <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                            Let&apos;s discuss how our expertise can bring your vision to life with innovative,
-                            scalable, and user-centric solutions.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button className="bg-purple-600 hover:bg-purple-700 text-white  px-8 py-3 rounded-lg font-semibold transition-colors">
-                                Start Your Project
-                            </button>
-                            <button className="border border-input bg-background px-8 py-3 rounded-lg font-semibold hover:bg-accent transition-colors">
-                                View Case Studies
-                            </button>
-                        </div>
+                {/* Bottom Bar */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                    className="mt-16 pt-16 border-t border-gray-100 dark:border-white/5 flex flex-col md:flex-row items-center justify-between gap-8"
+                >
+                    <div className="text-center md:text-left">
+                        <h3 className="text-2xl font-bold dark:text-white mb-2">Have a vision in mind?</h3>
+                        <p className="text-gray-600 dark:text-gray-400">Let's build the next big thing together.</p>
                     </div>
-                </div>
+                    <Link href="/contact" className="group flex items-center gap-4 bg-gray-950 dark:bg-white text-white dark:text-black py-4 px-8 rounded-full font-bold transition-all hover:scale-105 active:scale-95 shadow-xl">
+                        Start a Project
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                </motion.div>
             </div>
         </section>
     )
 }
 
-interface ServiceCardProps {
-    service: {
-        id: number
-        icon: string
-        category: string
-        title: string
-        description: string
-        features: string[]
-    }
-}
-
-function ServiceCard({ service }: ServiceCardProps) {
+function ServiceCard({ service, index }: { service: any, index: number }) {
     return (
-        <Card className="group relative overflow-hidden border-border bg-card hover:shadow-lg transition-all duration-300 hover:border-primary/20 h-full">
-            <CardContent className="p-6 md:p-8">
-                {/* Icon and Category */}
-                <div className="flex items-center gap-4 mb-6">
-                    <div className="text-3xl">{service.icon}</div>
-                    <Badge variant="outline" className="font-medium">
-                        {service.category}
-                    </Badge>
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="group relative h-full"
+        >
+            <div className={`relative h-full p-8 rounded-[2rem] bg-gray-50 dark:bg-[#111] border border-gray-200 dark:border-white/5 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:border-[#ce3ef4]/20`}>
+                {/* Visual Accent */}
+                <div className={`absolute top-0 right-0 w-32 h-32 bg-linear-to-br ${service.color} blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+
+                {/* Icon Container */}
+                <div className={`relative w-14 h-14 rounded-2xl bg-white dark:bg-black shadow-lg flex items-center justify-center mb-10 transition-transform duration-500 group-hover:rotate-[10deg] group-hover:scale-110`}>
+                    <service.icon className={`w-7 h-7 ${service.accent}`} />
                 </div>
 
-                {/* Title and Description */}
-                <div className="space-y-4">
-                    <h3 className="text-xl md:text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">
+                {/* Content */}
+                <div className="relative">
+                    <span className="text-xs font-black uppercase tracking-widest text-gray-500 mb-2 block">
+                        {service.category}
+                    </span>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
                         {service.title}
                     </h3>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8">
                         {service.description}
                     </p>
                 </div>
 
-                {/* Features List */}
-                <ul className="mt-6 space-y-2">
-                    {service.features.map((feature, index) => (
-                        <li key={index} className="flex items-center gap-2 text-sm">
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full" />
-                            <span className="text-muted-foreground">{feature}</span>
+                {/* Features */}
+                <ul className="relative space-y-4">
+                    {service.features.map((feature: string, idx: number) => (
+                        <li key={idx} className="flex items-center gap-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+                            <div className={`w-5 h-5 rounded-full flex items-center justify-center bg-white dark:bg-black shadow-sm group-hover:bg-[#ce3ef4] group-hover:text-white transition-colors duration-300`}>
+                                <Check className="w-3 h-3 transition-colors" />
+                            </div>
+                            {feature}
                         </li>
                     ))}
                 </ul>
-
-                {/* Hover Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-            </CardContent>
-        </Card>
+            </div>
+        </motion.div>
     )
 }

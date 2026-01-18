@@ -158,15 +158,15 @@ function NavbarUi({ className }: { className?: string }) {
                         </Link>
                     </div>
                     <div className="flex items-center w-full justify-end">
-                        <SearchBar />
-                        {isAuthenticated && <Link href="/bookmarks"> <BookmarkCheck className="cursor-pointer mr-3" /> </Link>}
+                        {/* <SearchBar /> */}
+                        {/* {isAuthenticated && <Link href="/bookmarks"> <BookmarkCheck className="cursor-pointer mr-3" /> </Link>} */}
                         <AnimatedThemeToggler />
-                        {
+                        {/* {
                             isAuthenticated ?
                                 <ProfileDropdown />
                                 :
                                 <AuthDialog />
-                        }
+                        } */}
                     </div>
                     {/* Hamburger Menu Icon (visible on mobile) */}
                     <button
@@ -207,7 +207,7 @@ function NavbarUi({ className }: { className?: string }) {
 
                                 {/* Button */}
                                 <Button variant="secondary" className="px-6 py-2 rounded-lg cursor-pointer">
-                                    Mentorship
+                                    Get Free Consultant
                                 </Button>
                             </div>
                         </Link>
@@ -243,12 +243,12 @@ function NavbarUi({ className }: { className?: string }) {
                         <MenuItem setActive={setActive} active={active} item="Products">
                             <div className="text-sm grid grid-cols-2 gap-10 p-4">
                                 <ProductItem
-                                    title="Algochurn"
-                                    href="https://algochurn.com"
-                                    src="https://assets.aceternity.com/demos/algochurn.webp"
-                                    description="Prepare for tech interviews like never before."
+                                    title="RoutineFlux"
+                                    href="https://routineflux.coderschain.com"
+                                    src="/routineflux.png"
+                                    description="RoutineFlux is a web application that helps users create and manage their routines."
                                 />
-                                <ProductItem
+                                {/* <ProductItem
                                     title="Tailwind Master Kit"
                                     href="https://tailwindmasterkit.com"
                                     src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
@@ -265,9 +265,15 @@ function NavbarUi({ className }: { className?: string }) {
                                     href="https://userogue.com"
                                     src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
                                     description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-                                />
+                                /> */}
                             </div>
                         </MenuItem>
+
+                        <Link href={"/contact"}>
+                            <div className="relative inline-block cursor-pointer">
+                                Contact
+                            </div>
+                        </Link>
                         {/* <MenuItem setActive={setActive} active={active} item="Pricing">
                             <div className="flex flex-col space-y-4 text-sm">
                                 <HoveredLink href="/hobby">Hobby</HoveredLink>
@@ -280,15 +286,15 @@ function NavbarUi({ className }: { className?: string }) {
 
                     {/* Right Side: Dark/Light Toggle, Sign In/Sign Up, Avatar */}
                     <div className="flex items-center gap-3 w-full justify-end">
-                        <SearchBar />
+                        {/* <SearchBar /> */}
                         {isAuthenticated && <Link href="/bookmarks"> <BookmarkCheck className="cursor-pointer" /> </Link>}
                         <AnimatedThemeToggler />
-                        {
+                        {/* {
                             isAuthenticated ?
                                 <ProfileDropdown />
                                 :
                                 <AuthDialog />
-                        }
+                        } */}
                     </div>
                 </Menu>
             </div>
