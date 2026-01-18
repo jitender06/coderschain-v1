@@ -3,15 +3,11 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Bookmark, Calendar, Clock, Eye, ArrowRight, BookmarkCheck } from 'lucide-react';
+import { Bookmark } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
-// import { useGetAllBookmarkedBlogsQuery } from '@/store/services/blogService';
-// // import { BlogCard } from '@/components/public/blog/BlogCard';
 import { Highlighter } from '@/components/ui/highlighter';
 
 export default function BookmarksPage() {
-    // const { data, isLoading, error, refetch } = useGetAllBookmarkedBlogsQuery(undefined);
     const data: any = null;
     const isLoading = false;
     const error = null;
@@ -22,9 +18,7 @@ export default function BookmarksPage() {
             <div className="min-h-screen bg-gray-50 py-8">
                 <div className="container mx-auto px-4 max-w-6xl">
                     Failed to load bookmarks. Please try again.
-                    {/* </AlertDescription> */}
-                    {/* </Alert> */}
-                    <Button onClick={refetch} variant="outline">
+                    <Button onClick={refetch} variant="outline" className="ml-4">
                         Retry
                     </Button>
                 </div>
@@ -55,7 +49,6 @@ export default function BookmarksPage() {
                 ) : data?.data?.blogs && data.data.blogs.length > 0 ? (
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                         {data.data.blogs.map((blog: any) => (
-                            // <BlogCard key={blog.id} post={blog} />
                             null
                         ))}
                     </div>
@@ -73,8 +66,8 @@ function EmptyBookmarks() {
     return (
         <div className="text-center py-16">
             <Bookmark className="h-16 w-16 text-gray-300 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">No bookmarks yet</h3>
-            <p className="text-gray-600 mb-6">Start saving your favorite items to see them here.</p>
+            <h3 className="text-xl font-semibold text-foreground mb-2">No bookmarks yet</h3>
+            <p className="text-muted-foreground mb-6">Start saving your favorite items to see them here.</p>
             <Link href="/">
                 <Button>Go Home</Button>
             </Link>
