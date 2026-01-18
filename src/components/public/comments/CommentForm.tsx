@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { useAuth } from '@/hooks/useAuth';
+// import { useAuth } from '@/hooks/useAuth';
 // import { useAddcommentMutation, useAddcommentreplyMutation } from '@/store/services/commentService';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -41,7 +41,8 @@ export const CommentForm = ({
     console.log(blogId,
         parentId,
         replyTo, comment, ":DFsdfds")
-    const { user } = useAuth();
+    // const { user } = useAuth();
+    const user: any = null;
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     // const [addComment] = useAddcommentMutation();

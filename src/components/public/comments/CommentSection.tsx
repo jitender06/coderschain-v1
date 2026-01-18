@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { useAuth } from '@/hooks/useAuth';
+// import { useAuth } from '@/hooks/useAuth';
 import { CommentForm } from './CommentForm';
 import { CommentList } from './CommentList';
 
@@ -26,11 +26,14 @@ interface Comment {
 interface CommentSectionProps {
     blogId: number;
     comments: Comment[];
-    refetch:any;
+    refetch: any;
 }
 
 export const CommentSection = ({ blogId, comments, refetch }: CommentSectionProps) => {
-    const { isAuthenticated, user, isLoading } = useAuth();
+    // const { isAuthenticated, user, isLoading } = useAuth();
+    const isAuthenticated = false;
+    const user: any = null;
+    const isLoading = false;
     const [showLoginDialog, setShowLoginDialog] = useState(false);
 
     const handleAddComment = () => {
@@ -52,7 +55,7 @@ export const CommentSection = ({ blogId, comments, refetch }: CommentSectionProp
                 {isAuthenticated ? (
                     <CommentForm
                         blogId={blogId}
-                        onSubmitSuccess={() => {refetch()}}
+                        onSubmitSuccess={() => { refetch() }}
                     />
                 ) : (
                     <div

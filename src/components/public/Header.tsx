@@ -8,7 +8,7 @@ import Link from "next/link";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { AuthDialog } from "./AuthDialog";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
-import { useAuth } from "@/hooks/useAuth";
+// import { useAuth } from "@/hooks/useAuth";
 // import { useLogoutMutation } from "@/store/services/authService";
 import { SearchBar } from "../common/SearchBar";
 import { Button } from "@/components/ui/button";
@@ -26,7 +26,10 @@ export default function Header() {
 function NavbarUi({ className }: { className?: string }) {
     const [active, setActive] = useState<string | null>(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const { isAuthenticated, user, isLoading } = useAuth();
+    // const { isAuthenticated, user, isLoading } = useAuth();
+    const isAuthenticated = false;
+    const user: any = null;
+    const isLoading = false;
     const memoizedUser = useMemo(() => user, [user?.id]); // Only change when user id changes
 
     console.log(isAuthenticated, ">isAuthenticatedoij")

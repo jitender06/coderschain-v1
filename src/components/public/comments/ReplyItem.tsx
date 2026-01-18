@@ -119,7 +119,7 @@
 "use client";
 
 import { useState } from 'react';
-import { useAuth } from '@/hooks/useAuth';
+// import { useAuth } from '@/hooks/useAuth';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { CommentForm } from './CommentForm';
@@ -158,7 +158,8 @@ interface ReplyItemProps {
 }
 
 export const ReplyItem = ({ reply, blogId, parentComment, refetch }: ReplyItemProps) => {
-    const { isAuthenticated } = useAuth();
+    // const { isAuthenticated } = useAuth();
+    const isAuthenticated = false;
     const [showReplyForm, setShowReplyForm] = useState(false);
 
     const formatTime = (dateString: string) => {

@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/admin/'],
+      disallow: ['/admin/', '/profile/'],
     },
-    sitemap: 'https://coderschain.com/sitemap.xml',
+    sitemap: 'https://www.coderschain.com/sitemap.xml',
   }
 }

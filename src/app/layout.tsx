@@ -36,22 +36,23 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   title: {
-    default: "Coderschain | Tech, Web & AI Insights",
+    default: "Coderschain | Custom Web, Mobile & AI Solutions",
     template: "%s | Coderschain",
   },
   description:
-    "Coderschain is a modern tech blog sharing insights on Web Development, JavaScript, AI, and Coding best practices.",
+    "Coderschain is a premier software development agency specializing in Custom Web Applications, Mobile Apps, AI Integration, and UI/UX Design. We build scalable digital products for businesses.",
   keywords: [
     "Coderschain",
-    "Tech Blog",
-    "Web Development",
-    "AI",
-    "JavaScript",
-    "Next.js",
-    "React",
-    "Coding",
+    "Software Development Agency",
+    "Custom Web Development",
+    "Mobile App Development",
+    "AI Agent Development",
+    "UI/UX Design",
+    "MVP Development",
+    "Full Stack Development",
+    "AR/VR Solutions",
   ],
-  authors: [{ name: "Coderschain Team" }],
+  authors: [{ name: "Coderschain Development Team" }],
   creator: "Coderschain",
   publisher: "Coderschain",
   metadataBase: new URL("https://www.coderschain.com"),
@@ -59,36 +60,34 @@ export const metadata: Metadata = {
     canonical: "https://www.coderschain.com",
   },
   openGraph: {
-    title: "Coderschain | Web, AI & Coding Insights",
+    title: "Coderschain | Custom Software & AI Development Agency",
     description:
-      "Stay ahead in tech with Coderschain — tutorials, guides, and deep dives into AI, web, and software development.",
+      "Transform your business with Coderschain. We deliver high-performance web, mobile, and AI solutions tailored to your unique needs.",
     url: "https://www.coderschain.com",
     siteName: "Coderschain",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://www.coderschain.com/og-image.png",
+        url: "/CodersChain.png",
         width: 1200,
         height: 630,
-        alt: "Coderschain - Tech Blog",
+        alt: "Coderschain - Software Development Agency",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Coderschain | Tech, Web & AI Blog",
+    title: "Coderschain | Custom Web & AI Development",
     description:
-      "A modern blog about coding, web, and AI — powered by Next.js and Express.",
-    creator: "@coderschain", // your Twitter handle if available
-    images: ["https://www.coderschain.com/og-image.png"],
+      "Modern software development agency specializing in web, mobile, and AI solutions.",
+    creator: "@coderschain",
+    images: ["/CodersChain.png"],
   },
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
-    // shortcut: "/favicon-32x32.png",
   },
-  // manifest: "/site.webmanifest",
   robots: {
     index: true,
     follow: true,

@@ -1,5 +1,5 @@
 "use client"
-import { useAuth } from '@/hooks/useAuth';
+// import { useAuth } from '@/hooks/useAuth';
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -12,7 +12,10 @@ import Constants from '@/config/constants';
 // import { useUpdateProfileMutation } from '@/store/services/authService';
 
 function ProfilePage() {
-    const { isAuthenticated, user, isLoading } = useAuth();
+    // const { isAuthenticated, user, isLoading } = useAuth();
+    const isAuthenticated = false;
+    const user: any = null;
+    const isLoading = false;
     const [isEditing, setIsEditing] = useState(false);
     const [editedUser, setEditedUser] = useState({
         firstName: user?.firstName || '',

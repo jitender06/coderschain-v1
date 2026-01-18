@@ -13,9 +13,9 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-    title: 'About Us - CodersChain | Empowering Developers Worldwide',
-    description: 'Learn about CodersChain - your partner in tech journey. Founded by Jitender Choudhary with 3+ years of software engineering experience. We provide blogs, mentorship, projects, and development services.',
-    keywords: 'coderschain, about us, software development, mentorship, web development, MERN, MEAN, react native, startup',
+    title: 'About Coderschain | Our Mission & Team',
+    description: 'Learn about Coderschain - a software development agency founded by Jitender Choudhary. We specialize in delivering high-quality web, mobile, and AI solutions.',
+    keywords: 'coderschain, softare development agency, about us, tech team, startup solutions, software engineering india',
 }
 
 function Page() {

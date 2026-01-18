@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { useAuth } from '@/hooks/useAuth';
+// import { useAuth } from '@/hooks/useAuth';
 // import { useGetCommentsReplyQuery } from '@/store/services/commentService';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -34,7 +34,8 @@ interface CommentItemProps {
 
 export const CommentItem = ({ comment, blogId, refetch }: CommentItemProps) => {
     console.log(comment, ":>commentjn98")
-    const { isAuthenticated } = useAuth();
+    // const { isAuthenticated } = useAuth();
+    const isAuthenticated = false;
     const [showReplyForm, setShowReplyForm] = useState(false);
     const [showReplies, setShowReplies] = useState(false);
 
