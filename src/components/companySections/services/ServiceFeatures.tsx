@@ -1,5 +1,6 @@
 import * as motion from "framer-motion/client"
 import { ReactNode } from "react";
+import type { Variants } from "framer-motion";
 
 interface Feature {
   title: string;
@@ -8,7 +9,7 @@ interface Feature {
 }
 
 export default function ServiceFeatures({ features }: { features: Feature[] }) {
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -18,7 +19,7 @@ export default function ServiceFeatures({ features }: { features: Feature[] }) {
     }
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
