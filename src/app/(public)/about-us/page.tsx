@@ -13,9 +13,9 @@ import {
 } from 'lucide-react'
 
 export const metadata = {
-    title: 'About Coderschain | Our Mission & Team',
-    description: 'Learn about Coderschain - a software development agency founded by Jitender Choudhary. We specialize in delivering high-quality web, mobile, and AI solutions.',
-    keywords: 'coderschain, softare development agency, about us, tech team, startup solutions, software engineering india',
+    title: 'About Coderschain | Our Mission & Boutique Engineering Team',
+    description: 'Learn about Coderschain - a software development agency specializing in high-fidelity digital solutions. Meet our team of expert engineers and designers.',
+    keywords: ['coderschain', 'software agency team', 'boutique engineering', 'startup development partners', 'expert developers india'],
 }
 
 function Page() {
@@ -48,10 +48,10 @@ function Page() {
     ]
 
     const teamStats = [
-        { value: '3+', label: 'Years Experience' },
+        { value: '10+', label: 'Years Experience' },
         { value: '20+', label: 'Clients Served' },
         { value: '50+', label: 'Projects Completed' },
-        { value: '10', label: 'Team Members' }
+        { value: '20', label: 'Team Members' }
     ]
 
     return (
@@ -150,7 +150,7 @@ function Page() {
                                     Experience & Background
                                 </h4>
                                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                                    With over 3 years of experience as a Software Engineer, I've worked
+                                    As a Software Engineer, I've worked
                                     extensively with numerous startups, gaining deep insights into
                                     industry requirements and challenges. My journey through the startup
                                     ecosystem has given me a unique understanding of what it takes to

@@ -10,7 +10,7 @@ import { AuthDialog } from "./AuthDialog";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 // import { useAuth } from "@/hooks/useAuth";
 // import { useLogoutMutation } from "@/store/services/authService";
-import { SearchBar } from "../common/SearchBar";
+
 import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import CommonLoading from "../common/CommonLoading";
@@ -158,7 +158,7 @@ function NavbarUi({ className }: { className?: string }) {
                         </Link>
                     </div>
                     <div className="flex items-center w-full justify-end">
-                        {/* <SearchBar /> */}
+
                         {/* {isAuthenticated && <Link href="/bookmarks"> <BookmarkCheck className="cursor-pointer mr-3" /> </Link>} */}
                         <AnimatedThemeToggler />
                         {/* {
@@ -286,7 +286,7 @@ function NavbarUi({ className }: { className?: string }) {
 
                     {/* Right Side: Dark/Light Toggle, Sign In/Sign Up, Avatar */}
                     <div className="flex items-center gap-3 w-full justify-end">
-                        {/* <SearchBar /> */}
+
                         {isAuthenticated && <Link href="/bookmarks"> <BookmarkCheck className="cursor-pointer" /> </Link>}
                         <AnimatedThemeToggler />
                         {/* {
@@ -424,11 +424,7 @@ function NavbarUi({ className }: { className?: string }) {
                                     Contact
                                 </Link>
                             </li>
-                            <li>
-                                <Link href="/search" onClick={toggleMobileMenu}>
-                                    Search
-                                </Link>
-                            </li>
+
 
                             {isAuthenticated && <li>
                                 <Link href="/bookmarks" onClick={toggleMobileMenu}> Bookmarks </Link>

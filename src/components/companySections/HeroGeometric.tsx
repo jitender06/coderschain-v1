@@ -179,9 +179,7 @@ export default function HeroGeometric({
 
                     <motion.div custom={2} variants={fadeUpVariants} initial="hidden" animate="visible">
                         <p className="text-base sm:text-lg md:text-lg text-black/60 dark:text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-5xl mx-auto px-4">
-                            CodersChain delivers custom web, mobile, and AI-powered solutions for businesses across industries — from
-                            e-learning and fintech to real estate and healthcare. We specialize in full-stack, UI/UX, and MVP
-                            development to turn ideas into scalable digital products.
+                            CodersChain delivers custom web, mobile, and AI-powered solutions for businesses across industries — from <br /> e-learning and fintech to real estate and healthcare. We specialize in full-stack, UI/UX, and MVP development to turn ideas into scalable digital products.
                         </p>
                     </motion.div>
                 </div>

@@ -108,8 +108,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/search" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Search
+                <Link href="/blogs" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Blogs
                 </Link>
               </li>
               {/* <li>
@@ -142,7 +142,7 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <MapPin className="h-4 w-4 text-muted-foreground" />
                 <span className="text-muted-foreground text-sm">
-                  India, Mohali
+                  India, Rajasthan, Jaipur
                 </span>
               </div>
               {/* <div className="flex items-center space-x-3">
@@ -154,7 +154,7 @@ export default function Footer() {
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-muted-foreground" />
                 <span className="text-muted-foreground text-sm">
-                  hello@Coderschain.com
+                  support@Coderschain.com
                 </span>
               </div>
               {/* <div className="flex items-center space-x-3">

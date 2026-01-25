@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Our Services | Custom Software Development Solutions',
     description: 'Comprehensive software development services including web, mobile, AI, AR/VR, and UI/UX design. End-to-end development solutions.',
+    keywords: ['software development', 'web apps', 'mobile apps', 'AI integration', 'AR VR solutions', 'UI UX design', 'MVP development'],
 };
 
 const services = [

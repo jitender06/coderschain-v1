@@ -1,4 +1,5 @@
 "use client"
+import { Metadata } from 'next'
 import React from 'react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -16,7 +17,7 @@ import {
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { toast } from 'sonner'
-// import { useAddContactMutation } from '@/store/services/contactService'
+import { submitInquiry } from '@/app/actions/inquiry'
 
 
 const contactSchema = Yup.object({
@@ -49,10 +50,6 @@ const initialValues = {
 }
 
 function ContactPage() {
-    // const [addContact, { isLoading }] = useAddContactMutation();
-    const addContact = (v: any) => ({ unwrap: () => Promise.resolve() });
-    const isLoading = false;
-
     const formik = useFormik({
         initialValues,
         validationSchema: contactSchema,
@@ -65,9 +62,15 @@ function ContactPage() {
                     interest: values.service,
                     message: values.message,
                 };
-                await addContact(payload).unwrap();
-                resetForm();
-                toast.success('Thank you for your message! We will get back to you soon.');
+
+                const result = await submitInquiry(payload);
+
+                if (result.error) {
+                    toast.error(result.error);
+                } else {
+                    resetForm();
+                    toast.success('Thank you for your message! We will get back to you soon.');
+                }
             } catch (error) {
                 console.error('Failed to submit form:', error);
                 toast.error('Failed to send message. Please try again.');
@@ -107,13 +110,13 @@ function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-gray-900 dark:text-white">Email</h3>
-                                        <p className="text-gray-600 dark:text-gray-400">contact@coderschain.com</p>
+                                        <p className="text-gray-600 dark:text-gray-400">support@coderschain.com</p>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">We'll respond within 24 hours</p>
                                     </div>
                                 </div>
 
                                 {/* Phone */}
-                                <div className="flex items-start gap-3">
+                                {/* <div className="flex items-start gap-3">
                                     <div className="p-2 bg-green-100 dark:bg-green-900 rounded-lg">
                                         <Phone className="h-4 w-4 text-green-600 dark:text-green-400" />
                                     </div>
@@ -122,7 +125,7 @@ function ContactPage() {
                                         <p className="text-gray-600 dark:text-gray-400">+91 XXXXX XXXXX</p>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">Mon-Fri from 9am to 6pm</p>
                                     </div>
-                                </div>
+                                </div> */}
 
                                 {/* Address */}
                                 <div className="flex items-start gap-3">
@@ -323,15 +326,15 @@ function ContactPage() {
                                         type="submit"
                                         className="w-full"
                                         size="lg"
-                                        disabled={formik.isSubmitting || !formik.isValid || isLoading}
+                                        disabled={formik.isSubmitting || !formik.isValid}
                                     >
                                         <Send className="h-4 w-4 mr-2" />
                                         {formik.isSubmitting ? 'Sending...' : 'Send Message'}
                                     </Button>
 
-                                    <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+                                    {/* <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
                                         By submitting this form, you agree to our Privacy Policy and Terms of Service.
-                                    </p>
+                                    </p> */}
                                 </form>
                             </CardContent>
                         </Card>
@@ -344,7 +347,7 @@ function ContactPage() {
                                         For Quick Inquiries
                                     </h3>
                                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                                        Prefer a quicker response? Email us directly at contact@coderschain.com for urgent matters.
+                                        Prefer a quicker response? Email us directly at support@coderschain.com for urgent matters.
                                     </p>
                                 </CardContent>
                             </Card>

@@ -4,8 +4,9 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: 'Mentorship & Expert Consulting | Coderschain',
-  description: 'Book 1-on-1 mentorship sessions, expert consulting, or freelance discussions with industry professionals at Coderschain.',
+  title: 'Expert Mentorship & Software Consulting',
+  description: 'Book 1-on-1 mentorship sessions, expert consulting, or freelance discussions with industry professionals at Coderschain. Resolve technical hurdles and scale your skills.',
+  keywords: ['software mentorship', 'coding consultation', 'technical advisor', 'expert developer call', 'freelance discussion'],
 };
 
 export default function MentorshipPage() {
@@ -33,8 +34,13 @@ export default function MentorshipPage() {
         </p>
       </div>
 
-      <iframe
+      {/* <iframe
         src="https://cal.com/jatinder-choudhary-gyhmjw/30min?overlayCalendar=true"
+        style={{ width: "100%", height: "100vh", border: "0" }}
+        allow="camera; microphone; fullscreen; clipboard-read; clipboard-write"
+      /> */}
+      <iframe
+        src="https://cal.com/coding-web-cbx4ru/30min?overlayCalendar=true"
         style={{ width: "100%", height: "100vh", border: "0" }}
         allow="camera; microphone; fullscreen; clipboard-read; clipboard-write"
       />

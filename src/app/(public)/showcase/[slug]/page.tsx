@@ -4,13 +4,14 @@ import { CaseStudyDetail } from "@/components/companySections/CaseStudy/CaseStud
 import { caseStudies } from "@/components/companySections/CaseStudy/data/caseStudies"
 
 interface PageProps {
-    params: {
+    params: Promise<{
         slug: string
-    }
+    }>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-    const study = caseStudies.find(s => s.slug === params.slug)
+    const { slug } = await params
+    const study = caseStudies.find(s => s.slug === slug)
 
     if (!study) {
         return {
@@ -45,8 +46,9 @@ export async function generateStaticParams() {
     }))
 }
 
-export default function CaseStudyPage({ params }: PageProps) {
-    const study = caseStudies.find(s => s.slug === params.slug)
+export default async function CaseStudyPage({ params }: PageProps) {
+    const { slug } = await params
+    const study = caseStudies?.find(s => s?.slug === slug)
 
     if (!study) {
         notFound()

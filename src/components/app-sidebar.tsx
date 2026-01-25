@@ -31,6 +31,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
+import { createClient } from "@/utils/supabase/client"
+
 const data = {
   user: {
     name: "shadcn",
@@ -49,9 +51,9 @@ const data = {
       icon: IconUserStar,
     },
     {
-      title: "Users",
-      url: "/admin/all-users",
-      icon: IconUsers,
+      title: "Blogs",
+      url: "/admin/blogs",
+      icon: IconFileDescription,
     },
     // {
     //   title: "Projects",
@@ -149,6 +151,23 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const [user, setUser] = React.useState<any>(null)
+  const supabase = createClient()
+
+  React.useEffect(() => {
+    async function getUser() {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (user) {
+        setUser({
+          name: user.email?.split('@')[0] || "Admin",
+          email: user.email,
+          avatar: "", // Can add avatar logic later if needed
+        })
+      }
+    }
+    getUser()
+  }, [])
+
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
@@ -168,11 +187,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        {/* <NavDocuments items={data.documents} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={user || { name: "Loading...", email: "...", avatar: "" }} />
       </SidebarFooter>
     </Sidebar>
   )

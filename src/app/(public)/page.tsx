@@ -20,7 +20,7 @@ export default function Home() {
       <ServicesSection />
       <ProjectShowcase />
       <WobbleCardSection />
-      <TestimonialCarousel />
+      {/* <TestimonialCarousel /> */}
       <CallToAction />
     </>
   );

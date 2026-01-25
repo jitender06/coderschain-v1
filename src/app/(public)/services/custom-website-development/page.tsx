@@ -4,126 +4,149 @@ import ServiceFeatures from '@/components/companySections/services/ServiceFeatur
 import ServiceProcess from '@/components/companySections/services/ServiceProcess';
 import ServicePortfolio from '@/components/companySections/services/ServicePortfolio';
 import ServiceCTASection from '@/components/companySections/services/ServiceCTASection';
+import { CheckCircle2, Code2, Rocket, ShieldCheck, Zap, Laptop } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Custom Website Development Company | Bespoke Web Solutions',
-    description: 'Expert custom website development services. We build scalable, high-performance websites with modern technologies like Next.js, React, and Node.js.',
-    keywords: 'custom website development, web development company, bespoke websites, responsive web design, ecommerce development',
+    title: 'Custom Website Development | Scalable Web Solutions',
+    description: 'Grow your business with premium custom website development. We build high-performance, SEO-optimized, and scalable web applications using Next.js, React, and Node.js.',
+    keywords: ['custom web development', 'enterprise websites', 'bespoke applications', 'Next.js agency', 'scalable architecture'],
     openGraph: {
-        title: 'Custom Website Development Company | CodersChain',
-        description: 'Bespoke web development solutions tailored to your business needs',
-        type: 'website',
+        title: 'Custom Website Development | Premium Scalable Solutions',
+        description: 'Bespoke digital solutions designed for performance and scale.',
+        url: 'https://www.coderschain.com/services/custom-website-development',
     },
 };
 
 const serviceData = {
     title: 'Custom Website Development',
-    description: 'Expert custom website development services creating scalable, high-performance websites tailored to your business objectives.',
-    heroDescription: 'We build bespoke web applications that drive growth and deliver exceptional user experiences with modern technologies like Next.js, React, and Node.js.',
+    heroDescription: 'From complex enterprise platforms to high-growth startup MVPs, we build bespoke web applications that drive engagement and deliver measurable business results.',
+    highlights: [
+        {
+            title: 'Full-Stack Excellence',
+            description: 'End-to-end development using modern stacks that ensure speed, security, and scalability.',
+            icon: <Code2 className="w-6 h-6 text-[#fe78b8]" />
+        },
+        {
+            title: 'Performance Optimized',
+            description: 'Lightning-fast load times and smooth interactions to keep your users engaged.',
+            icon: <Zap className="w-6 h-6 text-[#ce3ef4]" />
+        },
+        {
+            title: 'Enterprise Security',
+            description: 'Built-in security best practices to protect your data and user privacy from day one.',
+            icon: <ShieldCheck className="w-6 h-6 text-blue-500" />
+        }
+    ],
     features: [
         {
-            title: 'Responsive Design',
-            description: 'Mobile-first approach ensuring perfect display across all devices and screen sizes',
+            title: 'Responsive & Mobile-First',
+            description: 'Seamless experiences across desktops, tablets, and smartphones.',
             icon: '📱'
         },
         {
-            title: 'SEO Optimized',
-            description: 'Built with search engine best practices for better visibility and higher rankings',
+            title: 'SEO Ready Architecture',
+            description: 'Semantic HTML and optimized structures for maximum search engine visibility.',
             icon: '🔍'
         },
         {
-            title: 'Fast Performance',
-            description: 'Lightning-fast loading times optimized for better user engagement and conversions',
-            icon: '⚡'
+            title: 'Custom API Integrations',
+            description: 'Connecting your platform with the tools you already use and love.',
+            icon: '🔌'
         },
         {
-            title: 'Scalable Architecture',
-            description: 'Future-proof solutions that grow with your business and handle increasing traffic',
-            icon: '📈'
+            title: 'Cloud-Native Solutions',
+            description: 'Leveraging AWS, Vercel, and Google Cloud for high availability.',
+            icon: '☁️'
         },
         {
-            title: 'Security First',
-            description: 'Enterprise-grade security measures to protect your data and user information',
-            icon: '🛡️'
+            title: 'Interactive UI/UX',
+            description: 'Engaging user interfaces built with React and Framer Motion.',
+            icon: '✨'
         },
         {
-            title: 'CMS Integration',
-            description: 'Easy-to-use content management systems for seamless content updates',
-            icon: '💾'
+            title: 'Data-Driven Design',
+            description: 'Interfaces designed based on user behavior and conversion goals.',
+            icon: '📊'
         }
     ],
     process: [
         {
-            step: 'Discovery & Planning',
-            description: 'Comprehensive analysis of your requirements, target audience, and business goals'
+            step: '01. Discovery',
+            description: 'We dive deep into your business goals, target audience, and functional requirements.'
         },
         {
-            step: 'UI/UX Design',
-            description: 'Creating intuitive, user-centered designs that enhance engagement and conversions'
+            step: '02. Blueprinting',
+            description: 'Creating wireframes and technical architecture to ensure a solid foundation.'
         },
         {
-            step: 'Development',
-            description: 'Agile development process with modern frameworks and regular progress updates'
+            step: '03. Agile Dev',
+            description: 'Rapid iterations with regular demos so you see progress in real-time.'
         },
         {
-            step: 'Quality Assurance',
-            description: 'Rigorous testing across devices and browsers to ensure flawless performance'
+            step: '04. Pure QA',
+            description: 'Rigorous testing for performance, security, and cross-browser compatibility.'
         },
         {
-            step: 'Deployment & Launch',
-            description: 'Smooth deployment with ongoing support, maintenance, and performance monitoring'
+            step: '05. Launch/Scale',
+            description: 'Deploying to production and providing ongoing support as you grow.'
         }
     ]
 };
 
 export default function CustomWebsiteDevelopmentPage() {
     return (
-        <div className="min-h-screen bg-white dark:bg-gray-900">
+        <div className="min-h-screen bg-white dark:bg-black overflow-x-hidden">
+            {/* Hero Section */}
             <ServiceHero
                 title={serviceData.title}
                 description={serviceData.heroDescription}
             />
 
-            {/* Additional Content Section */}
-            <section className="py-16 bg-gray-50 dark:bg-gray-800">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                                Tailored Web Solutions for Your Business
+            {/* Value Proposition Section */}
+            <section className="py-24 bg-gray-50/50 dark:bg-neutral-950/50 border-y border-gray-100 dark:border-white/5">
+                <div className="container-web mx-auto px-4 md:px-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div className="space-y-8">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#fe78b8]/10 border border-[#fe78b8]/20 text-[#fe78b8] text-sm font-bold uppercase tracking-wider">
+                                <Rocket className="w-4 h-4" />
+                                Engineering Excellence
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-[1.1]">
+                                We don't just build sites; we build <span className="bg-gradient-to-r from-[#fe78b8] to-[#ce3ef4] bg-clip-text text-transparent">Digital Assets.</span>
                             </h2>
-                            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                                Our custom website development services are designed to create unique digital experiences that reflect your brand identity and drive measurable results.
+                            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Our custom web development approach focuses on creating scalable, high-performance applications that solve real business problems. Whether it's a customer portal, an e-commerce powerhouse, or a dynamic SaaS platform, we deliver excellence.
                             </p>
-                            <div className="space-y-4">
-                                <div className="flex items-center">
-                                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                                    <span className="text-gray-700 dark:text-gray-300">E-commerce platforms with secure payment integration</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                                    <span className="text-gray-700 dark:text-gray-300">Progressive Web Apps (PWA) for app-like experience</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                                    <span className="text-gray-700 dark:text-gray-300">API development and third-party integrations</span>
-                                </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                                {serviceData.highlights.map((item, idx) => (
+                                    <div key={idx} className="flex gap-4 group">
+                                        <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-white dark:bg-neutral-900 border border-gray-100 dark:border-white/10 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                            {item.icon}
+                                        </div>
+                                        <div>
+                                            <h4 className="font-bold text-gray-900 dark:text-white mb-1">{item.title}</h4>
+                                            <p className="text-sm text-gray-500 dark:text-neutral-500">{item.description}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                         </div>
-                        <div className="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-lg">
-                            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Technologies We Use</h3>
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                                    <div className="text-lg font-semibold text-blue-600 dark:text-blue-400">Next.js</div>
+
+                        <div className="relative">
+                            <div className="absolute -inset-4 bg-gradient-to-tr from-[#fe78b8] to-[#ce3ef4] opacity-20 blur-3xl rounded-full" />
+                            <div className="relative bg-white dark:bg-neutral-900 rounded-[2.5rem] p-4 border border-gray-100 dark:border-white/10 shadow-2xl overflow-hidden group">
+                                <div className="aspect-[4/3] rounded-[2rem] bg-neutral-100 dark:bg-black border border-gray-100 dark:border-white/5 flex items-center justify-center">
+                                    <Laptop className="w-24 h-24 text-[#ce3ef4]/50 group-hover:scale-110 transition-transform duration-500" />
                                 </div>
-                                <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                                    <div className="text-lg font-semibold text-green-600 dark:text-green-400">React</div>
-                                </div>
-                                <div className="text-center p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
-                                    <div className="text-lg font-semibold text-yellow-600 dark:text-yellow-400">Node.js</div>
-                                </div>
-                                <div className="text-center p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-                                    <div className="text-lg font-semibold text-purple-600 dark:text-purple-400">TypeScript</div>
+                                <div className="p-8">
+                                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">The Stack of Winners</h3>
+                                    <div className="flex flex-wrap gap-3">
+                                        {['Next.js 15', 'React 19', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind v4', 'AWS'].map((tech) => (
+                                            <span key={tech} className="px-4 py-2 bg-gray-50 dark:bg-black border border-gray-100 dark:border-white/5 rounded-xl text-sm font-semibold text-gray-700 dark:text-gray-300">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -132,6 +155,30 @@ export default function CustomWebsiteDevelopmentPage() {
             </section>
 
             <ServiceFeatures features={serviceData.features} />
+
+            {/* Custom Content: Why Choose Us */}
+            <section className="py-24 bg-white dark:bg-black">
+                <div className="container-web mx-auto px-4 md:px-6 text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6">Why Partner With Us?</h2>
+                    <p className="text-gray-600 dark:text-neutral-400 max-w-2xl mx-auto">
+                        We blend creative design with technical mastery to deliver products that aren't just beautiful, but are strategic tools for your success.
+                    </p>
+                </div>
+                <div className="container-web mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {[
+                        { title: 'User-Centric', desc: 'Every line of code is written with your user in mind.' },
+                        { title: 'Always Scalable', desc: 'Build for today, prepare for tomorrow\'s traffic.' },
+                        { title: 'Proven Results', desc: '98% client retention rate across all global projects.' }
+                    ].map((card, i) => (
+                        <div key={i} className="p-10 rounded-3xl bg-neutral-50 dark:bg-neutral-900/50 border border-gray-100 dark:border-white/5 hover:border-[#fe78b8]/20 transition-all group">
+                            <CheckCircle2 className="w-10 h-10 text-[#fe78b8] mb-6 group-hover:scale-110 transition-transform" />
+                            <h3 className="text-2xl font-bold mb-4">{card.title}</h3>
+                            <p className="text-gray-500 dark:text-neutral-500 leading-relaxed">{card.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
             <ServiceProcess process={serviceData.process} />
             <ServicePortfolio service="custom-website-development" />
             <ServiceCTASection />
