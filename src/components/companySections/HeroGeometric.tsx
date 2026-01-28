@@ -59,10 +59,10 @@ function ElegantShape({
                 <div
                     className={cn(
                         "absolute inset-0 rounded-full",
-                        "bg-gradient-to-r to-transparent",
+                        "bg-linear-to-r to-transparent",
                         gradient,
                         // ✨ border & shadow adapt to theme
-                        "backdrop-blur-[2px] border-2 border-black/[0.1] dark:border-white/[0.15]",
+                        "backdrop-blur-[2px] border-2 border-black/10 dark:border-white/15",
                         "shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]",
                         "after:absolute after:inset-0 after:rounded-full",
                         "after:bg-[radial-gradient(circle_at_50%_50%,rgba(0,0,0,0.08),transparent_70%)] dark:after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]",
@@ -98,7 +98,7 @@ export default function HeroGeometric({
     return (
         <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-[#030303] transition-colors duration-700">
             {/* Background glow adapts */}
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+            <div className="absolute inset-0 bg-linear-to-br from-indigo-500/5 via-transparent to-rose-500/5 blur-3xl" />
 
             <div className="absolute inset-0 overflow-hidden">
                 <ElegantShape
@@ -154,7 +154,7 @@ export default function HeroGeometric({
                         variants={fadeUpVariants}
                         initial="hidden"
                         animate="visible"
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/[0.03] dark:bg-white/[0.03] border border-black/[0.08] dark:border-white/[0.08] mb-8 md:mb-12"
+                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/3 dark:bg-white/3 border border-black/8 dark:border-white/8 mb-8 md:mb-12"
                     >
                         <Image src="/CodersChain.png" alt="CodersChain" width={20} height={20} />
                         <span className="text-sm text-black/60 dark:text-white/60 tracking-wide">{badge}</span>
@@ -162,13 +162,13 @@ export default function HeroGeometric({
 
                     <motion.div custom={1} variants={fadeUpVariants} initial="hidden" animate="visible">
                         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 md:mb-8 tracking-tight">
-                            <span className="bg-clip-text text-transparent bg-gradient-to-b from-black to-black/70 dark:from-white dark:to-white/80">
+                            <span className="bg-clip-text text-transparent bg-linear-to-b from-black to-black/70 dark:from-white dark:to-white/80">
                                 {title1}
                             </span>
                             <br />
                             <span
                                 className={cn(
-                                    "bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-black/80 to-rose-600 dark:from-indigo-300 dark:via-white/90 dark:to-rose-300",
+                                    "bg-clip-text text-transparent bg-linear-to-r from-indigo-600 via-black/80 to-rose-600 dark:from-indigo-300 dark:via-white/90 dark:to-rose-300",
                                     pacifico.className,
                                 )}
                             >
@@ -185,7 +185,7 @@ export default function HeroGeometric({
                 </div>
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-white/70 dark:from-[#030303] dark:via-transparent dark:to-[#030303]/80 pointer-events-none transition-colors duration-700" />
+            <div className="absolute inset-0 bg-linear-to-t from-white via-transparent to-white/70 dark:from-[#030303] dark:via-transparent dark:to-[#030303]/80 pointer-events-none transition-colors duration-700" />
         </div>
     )
 }

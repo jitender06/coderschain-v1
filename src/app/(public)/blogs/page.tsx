@@ -1,4 +1,4 @@
-import { createClient } from "@/utils/supabase/server"
+import { createStaticClient as createClient } from "@/utils/supabase/server"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -28,7 +28,7 @@ export default async function BlogsPage() {
                 {/* Hero Section */}
                 <div className="max-w-3xl mb-16">
                     <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight leading-[1.1]">
-                        Our <span className="bg-gradient-to-r from-[#fe78b8] to-[#ce3ef4] bg-clip-text text-transparent">Digital Insights</span>
+                        Our <span className="bg-linear-to-r from-[#fe78b8] to-[#ce3ef4] bg-clip-text text-transparent">Digital Insights</span>
                     </h1>
                     <p className="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl">
                         Discover articles about the latest in tech, productivity, and our journey building world-class products.
@@ -63,7 +63,7 @@ function BlogCard({ post }: { post: any }) {
         <Link href={`/blogs/${post.slug}`} className="group block">
             <article className="h-full flex flex-col bg-gray-50 dark:bg-neutral-950 rounded-3xl overflow-hidden border border-gray-100 dark:border-white/5 transition-all duration-300 hover:border-[#fe78b8]/20 hover:shadow-2xl hover:shadow-[#fe78b8]/5">
                 {/* Cover Image */}
-                <div className="relative aspect-[16/17] overflow-hidden">
+                <div className="relative aspect-16/17 overflow-hidden">
                     {post?.cover_image ? (
                         <Image
                             src={post?.cover_image}
@@ -72,7 +72,7 @@ function BlogCard({ post }: { post: any }) {
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                     ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 dark:from-neutral-800 dark:to-neutral-900 flex items-center justify-center">
+                        <div className="w-full h-full bg-linear-to-br from-gray-200 to-gray-300 dark:from-neutral-800 dark:to-neutral-900 flex items-center justify-center">
                             <span className="text-gray-400 dark:text-neutral-600">No Image</span>
                         </div>
                     )}

@@ -34,7 +34,7 @@ export default function ServiceFeatures({ features }: { features: Feature[] }) {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            What We <span className="bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">Deliver</span>
+            What We <span className="bg-linear-to-r from-purple-500 to-blue-500 bg-clip-text text-transparent">Deliver</span>
           </h2>
           <p className="text-xl text-gray-500 dark:text-neutral-400 max-w-2xl mx-auto font-medium">
             Comprehensive solutions engineered for excellence and tailored to your specific strategic objectives.

@@ -43,7 +43,7 @@ export async function generateStaticParams() {
     const { data: posts } = await supabase
         .from('posts')
         .select('slug')
-        .eq('is_published', true)
+        .eq('published', true)
 
     return (posts || []).map((post) => ({
         slug: post.slug,
@@ -52,7 +52,7 @@ export async function generateStaticParams() {
 
 export default async function BlogDetailPage({ params }: { params: { slug: string } }) {
     const { slug } = await params
-    const supabase = await createClient()
+    const supabase = await createStaticClient()
 
     const { data: post, error } = await supabase
         .from('posts')
@@ -115,7 +115,7 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
 
                         <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-400 border-b border-gray-100 dark:border-white/10 pb-8">
                             <div className="flex items-center gap-2">
-                                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#fe78b8] to-[#ce3ef4] flex items-center justify-center text-white text-xs font-bold">
+                                <div className="w-8 h-8 rounded-full bg-linear-to-tr from-[#fe78b8] to-[#ce3ef4] flex items-center justify-center text-white text-xs font-bold">
                                     CC
                                 </div>
                                 <span className="font-semibold text-gray-900 dark:text-white">Coderschain Team</span>
@@ -133,7 +133,7 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
 
                     {/* Featured Image */}
                     {post.cover_image && (
-                        <div className="relative aspect-[21/9] w-full rounded-3xl overflow-hidden mb-16 shadow-2xl">
+                        <div className="relative aspect-21/9 w-full rounded-3xl overflow-hidden mb-16 shadow-2xl">
                             <Image
                                 src={post.cover_image}
                                 alt={post.title}

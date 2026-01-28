@@ -43,6 +43,8 @@ export async function createPost(data: any) {
 
     // 4. Revalidate and Redirect
     revalidatePath('/admin/blogs')
+    revalidatePath('/blogs')
+    revalidatePath(`/blogs/${newPost.slug}`)
     return { success: true, id: newPost.id }
 }
 
@@ -79,6 +81,8 @@ export async function updatePost(id: string, data: any) {
 
     revalidatePath('/admin/blogs')
     revalidatePath(`/admin/blogs/${id}/edit`)
+    revalidatePath('/blogs')
+    revalidatePath(`/blogs/${data.slug}`)
     return { success: true }
 }
 
@@ -101,5 +105,6 @@ export async function deletePost(id: string) {
     }
 
     revalidatePath('/admin/blogs')
+    revalidatePath('/blogs')
     return { success: true }
 }
