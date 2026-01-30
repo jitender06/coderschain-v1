@@ -51,7 +51,7 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
                         src={study.image}
                         alt={study.title}
                         fill
-                        className="object-cover brightness-[0.4]"
+                        className="object-cover object-top brightness-[0.4]"
                         priority
                         unoptimized
                     />
@@ -169,7 +169,7 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
             </section>
 
             {/* Visual Break */}
-            <section className="relative aspect-[21/9] w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 border-y border-neutral-200 dark:border-white/5">
+            {/* <section className="relative aspect-[21/9] w-full overflow-hidden bg-neutral-100 dark:bg-neutral-900 border-y border-neutral-200 dark:border-white/5">
                 <Image
                     src={study.image}
                     alt="Detail wide view"
@@ -177,10 +177,10 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
                     className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
                     unoptimized
                 />
-            </section>
+            </section> */}
 
             {/* Technologies */}
-            <section className="py-32 bg-gray-50 dark:bg-black/50">
+            {/* <section className="py-32 bg-gray-50 dark:bg-black/50">
                 <div className="container-web mx-auto px-4 md:px-6 text-center">
                     <h2 className="text-sm font-black uppercase tracking-[0.2em] text-purple-500 mb-12">Engineered With</h2>
                     <div className="flex flex-wrap justify-center gap-6">
@@ -198,7 +198,7 @@ export function CaseStudyDetail({ study }: CaseStudyDetailProps) {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Final Testimonial */}
             <section className="py-40 bg-purple-600">
