@@ -110,6 +110,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${sourceSerif.variable}`}>
+      <head>
+        <meta name="google-site-verification" content="JL-7xCspWMTwF1Xc4zVBNiCYnx1lvvenzbE18eaT48U" />
+      </head>
       <body
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
